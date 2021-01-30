@@ -1,0 +1,49 @@
+body {
+  margin: *;
+  padding: *;
+  flow: vertical;
+  size: 100%;
+}
+
+#banner {
+  background-color: #02A4D3;
+  height: 64dip;
+  text-align: center;
+  line-height: 64dip;
+  color: white;
+  font-size: 40dip;
+  font-weight: 500;
+  font-family: Segoe UI Semibold;
+}
+
+#container {
+  flow: vertical;
+  vertical-align: middle;
+  text-align: center;
+  border-spacing: 18dip;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+#version, #url, #made-with {
+  font-size: 16dip;
+  font-family: Segoe UI;
+}
+
+version {
+  background-color: #EEF0F3;
+  text-align: center;
+}
+
+#url {
+  color: #02A4D3;
+  cursor: pointer;
+}
+
+#url:hover {
+  text-decoration: underline;
+}
+
+img {
+  vertical-align: bottom;
+}

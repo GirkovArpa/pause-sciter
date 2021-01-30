@@ -1,0 +1,37 @@
+<html window-icon="icons/icon.ico">
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Pause</title>
+    <link href="main.css" rel="stylesheet">
+    <script src="main.tis"></script>
+    <script src="window.tis"></script>
+  </head>
+
+  <body>
+    <div #container>
+      <div .row .top>
+        <div>
+          <input |number #minutes tabindex="0" />
+          <label>minutes of work</label>
+        </div>
+        <button #button tabindex="0">Start</button>
+      </div>
+      <div .row .margin-top-25dip>
+        <div #progress value="0"></div>
+      </div>
+      <div .row>
+        <hr />
+      </div>
+      <div .row>
+        <svg #about xmlns="http://www.w3.org/2000/svg" id="about" class="c-hand float-right" width="24" height="24"
+          viewBox="0 0 24 24">
+          <path fill="none" d="M0 0h24v24H0V0z" />
+          <path fill="#e5e5f9"
+            d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" />
+        </svg>
+      </div>
+    </div>
+  </body>
+
+</html>

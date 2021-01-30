@@ -1,0 +1,66 @@
+const DEBUGGING = false;
+DEBUGGING && view.connectToInspector && view.connectToInspector(rootElement, inspectorIpAddress);
+
+$(#about) << event click {
+  const about = view.window({
+    type: View.FRAME_WINDOW,
+    url: self.url("about/main.htm"),
+    width: 400,
+    height: 250,
+  });
+}
+
+var running = false;
+
+self.timer(0.1s, function() {
+  if (running == false) return true;
+  if ($(#progress).value < $(#progress).attributes["max"]) {
+    $(#progress).value += 0.1;
+  } else {
+    const (sw, sh) = view.screenBox(#frame, #dimension);
+    const w = sw;
+    const h = sh;
+    const notification = view.window({
+      type: View.FRAME_WINDOW,
+      url: self.url("notification/main.htm"),
+      width: w,
+      height: h,
+      parameters: {
+        callbacks: {
+          resume: function() {
+            running = true;
+            $(#progress).attributes["max"] = $(#minutes).value * 60;
+            $(#minutes).state.disabled = true;
+            notification.close();
+            $(#button).text = "Stop";
+          },
+          postpone: function() {
+            running = true;
+            $(#progress).attributes["max"] = 60 * 3;
+            $(#minutes).state.disabled = true;
+            $(#minutes).value = 3;
+            notification.close();
+            $(#button).text = "Stop";
+          }
+        }
+      }
+    }); 
+    running = false;
+    $(#progress).value = 0;
+    $(#button).text = "Start";
+    $(#minutes).state.disabled = false;
+  }
+  return true;
+});
+
+$(#button) << event click {
+  running ? this.text = "Start" : this.text = "Stop";
+  $(#minutes).state.disabled = !$(#minutes).state.disabled;
+  if (! running) {
+    running = true;
+    $(#progress).attributes["max"] = $(#minutes).value * 60;
+  } else {
+    $(#progress).value = 0;
+    running = false;
+  }
+}

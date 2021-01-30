@@ -1,0 +1,16 @@
+function self.ready() {
+  const (sw, sh) = view.screenBox(#frame, #dimension);
+  const w = sw;
+  const h = sh;
+  view.move((sw / 2) - (w / 2), (sh / 2) - (h / 2), w, h, false);
+  view.windowResizable = false;
+  view.windowMaximizable = false;
+}
+
+$(#resume) << event click {
+  view.parameters.callbacks.resume();
+}
+
+$(#postpone) << event click {
+  view.parameters.callbacks.postpone();
+}

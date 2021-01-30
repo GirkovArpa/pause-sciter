@@ -1,0 +1,133 @@
+body {
+  margin: *;
+  padding: *;
+  flow: vertical;
+  size: 100%;
+  vertical-align: middle;
+}
+
+#container {
+  text-align: center;
+  flow: vertical;
+}
+
+#enjoy-a-break, #relax-your-eyes-and-stretch {
+  font-color: rgb(59, 67, 81);
+}
+
+#enjoy-a-break {
+  font-family: Segoe UI Semibold;
+  font-size: 40dip;
+  font-weight: bold;
+}
+
+#relax-your-eyes-and-stretch {
+  font-size: 16dip;
+  font-style: italic;
+  font-family: Segoe UI;
+  margin-top: 52dip;
+}
+
+#light-blue-bar {
+  margin-top: 28dip;
+  background-color: #96E7FE;
+  height: 83dip;
+  text-align: center;
+  vertical-align: middle;
+}
+
+button {
+  margin-left: 7dip;
+  margin-right: 7dip;
+  style-set: std-button-base;
+  color: white;
+  background-color: #02A4D3;
+  border-color: #0298C4;
+  border-width: 5dip;
+  border-radius: 0;
+  cursor: pointer;
+  font-family: Segoe UI;
+  font-size: 16dip;
+  height: 36dip;
+  line-height: 36dip;
+  padding-left: 10dip;
+  padding-right: 10dip;
+  text-align: center;
+  vertical-align: middle;
+  transition: background-color .2s quad-in-out, outline-color .2s quad-in-out, border-color .2s quad-in-out, color .2s quad-in-out;
+}
+
+button#postpone {
+  background-color: white;
+  color: #0298C4;
+  border-style: solid;
+  border-width: 1dip;
+}
+
+button:hover, button:focus {
+  background-color: #0290BA;
+  border-color: #0285AB;
+}
+
+button#postpone:hover {
+  background-color: #96E7FE;
+}
+
+button:active, button#postpone:active {
+  background-color: #0289B0;
+}
+
+button:active, button:focus, button#postpone:active, button#postpone:focus {
+  border-color: #027DA0;
+  outline-color: #78DAF5;
+  outline-style: solid;
+  outline-width: 2dip;
+  border-radius: 1dip;
+}
+
+button#postpone:active, button#postpone:focus {
+  color: white;
+}
+
+/*! Spectre.css Icons v0.5.8 | MIT License | github.com/picturepan2/spectre */
+
+.icon {
+  box-sizing: border-box;
+  display: inline-block;
+  font-size: inherit;
+  font-style: normal;
+  height: 1em;
+  position: relative;
+  text-indent: -9999px;
+  vertical-align: middle;
+  width: 1em;
+}
+
+.icon::after, .icon::before {
+  content: "";
+  display: block;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%)
+}
+
+.icon-time {
+  border: .13rem solid currentColor;
+  border-radius: 50%
+}
+
+.icon-time::before {
+  background: currentColor;
+  height: .4em;
+  transform: translate(-50%, -75%);
+  width: .13rem
+}
+
+.icon-time::after {
+  background: currentColor;
+  height: .3em;
+  transform: translate(-50%, -75%) rotate(90deg);
+  transform-origin: 50% 90%;
+  width: .13rem
+}
